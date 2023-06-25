@@ -1,2 +1,2 @@
 # SoundBored4
- Sound board for streamers
+ Soundboard for streamers, pranksters, and goofballs.
