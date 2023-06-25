@@ -94,7 +94,7 @@ def show_settings():
     # Create a button to save settings
     save_button = customtkinter.CTkButton(settings_window, text="Save", command=save_settings)
     save_button.pack(padx=10, pady=10)
-    
+
 
     def save_settings():
         # code to save settings goes here
