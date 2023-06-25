@@ -20,6 +20,10 @@ num_cols = 4
 # Get all files in the sounds directory
 sound_files = os.listdir("sounds")
 
+# create a list to be used as options for users to choose a voice for
+voices = ["Brian", "Emma", "Amy", "Joanna", "Matthew", "Ivy", "Justin", "Kendra", "Kimberly", "Salli", "Joey", "Nicole", "Russell", "Amy", "Brian", "Emma", "Raveena", "Ivy", "Joanna", "Joey", "Justin", "Kendra", "Kimberly", "Matthew", "Salli", "Nicole", "Russell", "Amy", "Brian", "Emma", "Raveena", "Ivy", "Joanna", "Joey", "Justin", "Kendra", "Kimberly", "Matthew", "Salli", "Nicole", "Russell", "Amy", "Brian", "Emma", "Raveena", "Ivy", "Joanna", "Joey", "Justin", "Kendra", "Kimberly", "Matthew", "Salli", "Nicole", "Russell", "Amy", "Brian", "Emma", "Raveena", "Ivy", "Joanna", "Joey", "Justin", "Kendra", "Kimberly", "Matthew", "Salli", "Nicole", "Russell", "Amy", "Brian", "Emma", "Raveena", "Ivy", "Joanna", "Joey", "Justin", "Kendra", "Kimberly", "Matthew", "Salli", "Nicole", "Russell", "Amy", "Brian", "Emma", "Raveena", "Ivy", "Joanna", "Joey", "Justin", "Kendra", "Kimberly", "Matthew", "Salli", "Nicole", "Russell"]
+
+
 # Filter out non-wav files
 sound_files = [file for file in sound_files if os.path.splitext(file)[1] == ".wav"]
 
@@ -87,14 +91,13 @@ def show_settings():
     volume_label = customtkinter.CTkLabel(settings_window, text="Master Volume")
     volume_label.pack(padx=10, pady=10)
 
-    sound_volume_slider = customtkinter.CTkSlider(settings_window, from_=0, to=1, orientation="horizontal")
-    sound_volume_slider.pack(padx=10, pady=10)
-    sound_volume_slider.set(1.00)
+    volume_slider = customtkinter.CTkSlider(settings_window, from_=0.0, to=1.0, orientation="horizontal")
+    volume_slider.pack(padx=10, pady=10)
+    volume_slider.set(1.00)
 
     # Create a button to save settings
     save_button = customtkinter.CTkButton(settings_window, text="Save", command=save_settings)
     save_button.pack(padx=10, pady=10)
-    
 
     def save_settings():
         # code to save settings goes here
