@@ -6,6 +6,7 @@ from tkinter import filedialog
 from gtts import gTTS
 from pygame import mixer
 import tempfile
+import shutil
 from tkinterdnd2 import DND_FILES, TkinterDnD
 
 
@@ -21,6 +22,9 @@ customtkinter.set_default_color_theme("dark-blue")
 # define number of columns
 num_cols = 4
 
+new_sounds = []
+new_sound_files = []
+save_button = None  # Global variable to store the save button
 try:
     with open('config.json', 'r') as file:
         json_string = file.read()
@@ -48,8 +52,6 @@ choose_accent = {
 }
 
 ui_accent = list(choose_accent.keys())
-# Get all files in the sounds directory
-sound_files = os.listdir("sounds")
 
 
 # Define class Robot
@@ -57,10 +59,15 @@ class Robot:
     def __init__(self):
         self.accent = "Choose an accent"
 
-speakerBot = Robot()
+class BoredObj:
+    def __init__(self):
+        self.isDirty = False
 
-# Filter out non-wav files
-sound_files = [file for file in sound_files if os.path.splitext(file)[1] == ".wav"]
+speakerBot = Robot()
+mySoundBored = BoredObj()
+
+# # Filter out non-wav files
+# sound_files = [file for file in sound_files if os.path.splitext(file)[1] == ".wav"]
 
 # Build a dictionary where the keys are the file names without the extension
 # and the values are the file paths
@@ -68,17 +75,8 @@ audio_files = {os.path.splitext(file)[0]: f"sounds/{file}" for file in sound_fil
 
 # Create the GUI with buttons for each sound
 root = TkinterDnD.Tk()
-root.geometry("500x780")
+root.geometry("380x720")
 root.title("Dreaddy Bear's Sound Bored")
-
-# Create an empty frame that takes up the entire root window
-drag_frame = customtkinter.CTkFrame(root, width=500, height=620)
-drag_frame.pack_propagate(False) # prevent the frame from shrinking
-drag_frame.pack()
-
-# Create a frame for the grid
-grid_frame = customtkinter.CTkFrame(drag_frame, width=500, height=700)
-grid_frame.place(relx=0.5, rely=0.5, anchor='c',) # place the frame at the center of drag_frame
 
 # Define the functions
 # function to choose a file
@@ -91,6 +89,41 @@ def choose_file(sound_index):
 def stop_sounds():
     pygame.mixer.music.stop()
     pygame.mixer.stop()
+# show save button function
+def show_save_button():
+    global save_button  # Declare the save_button as global to modify it
+    save_button = customtkinter.CTkButton(grid_frame, text="Save", command=save_sounds)
+    save_button.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 3, sticky="E", padx=4, pady=4)
+    
+def save_sounds():
+    with open('config.json', 'r') as f:
+        sounds = json.load(f)
+
+    # Add new sounds to the list
+    for file_path in new_sound_files:
+        sound_name = os.path.basename(file_path)
+        sounds.append(sound_name)
+    
+    # Save updated list to config.json
+    with open('config.json', 'w') as f:
+        json.dump(sounds, f)
+    
+    # Copy each sound file to /sounds/ (ensure /sounds/ directory exists)
+    os.makedirs('sounds', exist_ok=True)
+    tmp_directory = 'tmp/'  # Update the directory path accordingly
+
+    for file_name in os.listdir(tmp_directory):
+        if os.path.splitext(file_name)[1] in ['.wav', '.mp3']:
+            file_path = os.path.join(tmp_directory, file_name)
+            shutil.copy(file_path, 'sounds/')
+
+    # Clear the tmp/ directory
+    for file_name in os.listdir(tmp_directory):
+        file_path = os.path.join(tmp_directory, file_name)
+        os.remove(file_path)
+    hide_save_button()
+    mySoundBored.isDirty = False
+
 # function to play a sound
 def play_sound(file_path, volume_slider_index):
     if isRetrigger.get() == True:
@@ -138,6 +171,11 @@ def show_settings():
     def save_settings():
         # code to save settings goes here
         settings_window.withdraw()
+# function to hide the save button
+def hide_save_button():
+    global save_button  # Declare the save_button as global to modify it
+    if save_button:
+        save_button.grid_forget()
 
 # function to show the roboSpeak window
 def show_roboSpeak():
@@ -214,6 +252,14 @@ def text_to_speech(text, accent):
     mixer.music.load(temp_filename)
     mixer.music.play()
 
+# Create an empty frame that takes up the entire root window
+drag_frame = customtkinter.CTkFrame(root, width=360, height=820)
+
+
+# Create a frame for the grid
+grid_frame = customtkinter.CTkFrame(drag_frame)
+grid_frame.pack(fill="both", expand=True)  # fill the parent frame and allow expanding
+drag_frame.pack()
 
 # Create the sound buttons and volume sliders
 volume_sliders = []
@@ -221,13 +267,17 @@ for i, (sound_name, file_path) in enumerate(audio_files.items()):
     # Create a frame for the sound
     sound_frame = customtkinter.CTkFrame(master=grid_frame)
     sound_frame.grid(row=i // num_cols, column=i % num_cols, padx=5, pady=5)
+
+    # Configure the row and column to be stretchable
+    grid_frame.grid_rowconfigure(i // num_cols, weight=1)
+    grid_frame.grid_columnconfigure(i % num_cols, weight=1)
     
     # Create a button for the sound
     button = customtkinter.CTkButton(sound_frame, width=100, text=sound_name, command=lambda file_path=file_path, volume_slider_index=i: play_sound(file_path, volume_slider_index))
-    button.pack(padx=5, pady=5)
+    button.pack(fill="both", expand=True, padx=5, pady=5)
     
     volume_slider = customtkinter.CTkSlider(sound_frame, from_=0.0, to=1.0, width=100, orientation="horizontal")
-    volume_slider.pack(padx=5, pady=(0, 5))
+    volume_slider.pack(fill="both", expand=True, padx=5, pady=(0, 5))
     volume_slider.set(1.00)
     volume_sliders.append(volume_slider)
 
@@ -251,6 +301,7 @@ robotspeak.grid(row=(len(audio_files) // num_cols) , column=num_cols - 1, sticky
 
 
 
+
 # add an action listener to allow user to drag the window from the negative space on the frame
 def start_move(event):
     root.x = event.x_root - root.winfo_rootx()
@@ -269,8 +320,11 @@ drag_frame.bind('<B1-Motion>', move_window)
 def dummy(event):
     pass
 
-drag_area = customtkinter.CTkFrame(root, width=500, height=200)  # adjust dimensions as needed
+drag_area = customtkinter.CTkFrame(root, width=500, height=444)  # adjust dimensions as needed
 drag_area.pack(side='bottom', fill='x')  # pack the frame at the bottom of the root window
+
+drag_me_label = customtkinter.CTkLabel(drag_area, text="Drag me!", width=10, height=10)
+drag_me_label.place(relx=0.5, rely=0.5, anchor='s')
 
 drag_area.bind('<ButtonPress-1>', start_move)
 drag_area.bind('<B1-Motion>', move_window)
@@ -281,14 +335,22 @@ grid_frame.bind('<B1-Motion>', dummy)
 
 # handle file drop
 def drop(event):
+    print("attempting drop.")
     dropped_file_path = event.data
-    if os.path.splitext(dropped_file_path)[1] in [".wav", ".mp3"]:
-        sound_name = os.path.basename(dropped_file_path)
-        audio_files[sound_name] = dropped_file_path
-        i = len(audio_files) - 1  # index of new sound
+    file_extension = os.path.splitext(dropped_file_path)[1]
+    if file_extension in [".wav", ".mp3}"]:
+        if file_extension == ".mp3}":
+            dropped_file_path = dropped_file_path[1:-1]
+        print("test1: " + dropped_file_path)
+        print("test2: " + file_extension)
+        new_sound_files.append(dropped_file_path)
+        sound_name = os.path.splitext(os.path.basename(dropped_file_path))[0]
+        new_sounds.append(sound_name)
+        
+        print("Sound name: " + sound_name)
         # Create a frame for the sound
         sound_frame = customtkinter.CTkFrame(master=grid_frame)
-        sound_frame.grid(row=i // num_cols, column=i % num_cols, padx=5, pady=5)
+        sound_frame.grid(row=i // num_cols, column=i % num_cols + 1, padx=5, pady=5)
         # Create a button for the sound
         button = customtkinter.CTkButton(sound_frame, width=100, text=sound_name, command=lambda file_path=dropped_file_path, volume_slider_index=i: play_sound(file_path, volume_slider_index))
         button.pack(padx=5, pady=5)
@@ -296,7 +358,19 @@ def drop(event):
         volume_slider.pack(padx=5, pady=(0, 5))
         volume_slider.set(1.00)
         volume_sliders.append(volume_slider)
-        
+
+        print("Sound name: " + sound_name)
+        if mySoundBored.isDirty == False:
+            mySoundBored.isDirty = True
+            root.title(root.title() + "*")
+            show_save_button()
+
+        # create a file object to read the dropped file
+        with open(dropped_file_path, 'rb') as file:
+            # copy the file object to /tmp/
+            with open('tmp/' + os.path.basename(dropped_file_path), 'wb') as new_file:
+                shutil.copyfileobj(file, new_file)
+
 # make root a drop target
 root.drop_target_register(DND_FILES)
 root.dnd_bind('<<Drop>>', drop)
