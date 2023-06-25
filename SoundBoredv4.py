@@ -66,9 +66,6 @@ class BoredObj:
 speakerBot = Robot()
 mySoundBored = BoredObj()
 
-# # Filter out non-wav files
-# sound_files = [file for file in sound_files if os.path.splitext(file)[1] == ".wav"]
-
 # Build a dictionary where the keys are the file names without the extension
 # and the values are the file paths
 audio_files = {os.path.splitext(file)[0]: f"sounds/{file}" for file in sound_files}
