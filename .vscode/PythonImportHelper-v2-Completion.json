@@ -1,0 +1,786 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "customtkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
+        "label": "pygame",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame",
+        "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "mixer",
+        "importPath": "pygame",
+        "description": "pygame",
+        "isExtraImport": true,
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "mixer",
+        "importPath": "pygame",
+        "description": "pygame",
+        "isExtraImport": true,
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "filedialog",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "filedialog",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "gTTS",
+        "importPath": "gtts",
+        "description": "gtts",
+        "isExtraImport": true,
+        "detail": "gtts",
+        "documentation": {}
+    },
+    {
+        "label": "gTTS",
+        "importPath": "gtts",
+        "description": "gtts",
+        "isExtraImport": true,
+        "detail": "gtts",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "DND_FILES",
+        "importPath": "tkinterdnd2",
+        "description": "tkinterdnd2",
+        "isExtraImport": true,
+        "detail": "tkinterdnd2",
+        "documentation": {}
+    },
+    {
+        "label": "TkinterDnD",
+        "importPath": "tkinterdnd2",
+        "description": "tkinterdnd2",
+        "isExtraImport": true,
+        "detail": "tkinterdnd2",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "choose_file",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def choose_file(sound_index):\n    file_path = filedialog.askopenfilename(title=\"Select Audio File\", filetypes=((\"Audio Files\", \"*.wav *.mp3\"),))\n    if file_path:\n        audio_files[sound_index] = file_path\n        button[sound_index].configure(text=os.path.basename(file_path))\n# function to stop all sounds\ndef stop_sounds():\n    pygame.mixer.music.stop()\n    pygame.mixer.stop()\n# function to play a sound",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "stop_sounds",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def stop_sounds():\n    pygame.mixer.music.stop()\n    pygame.mixer.stop()\n# function to play a sound\ndef play_sound(file_path, volume_slider_index):\n    if isRetrigger.get() == True:\n        pygame.mixer.music.load(file_path)\n        volume = volume_sliders[volume_slider_index].get()\n        pygame.mixer.music.set_volume(volume)\n        pygame.mixer.music.play()",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "play_sound",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def play_sound(file_path, volume_slider_index):\n    if isRetrigger.get() == True:\n        pygame.mixer.music.load(file_path)\n        volume = volume_sliders[volume_slider_index].get()\n        pygame.mixer.music.set_volume(volume)\n        pygame.mixer.music.play()\n    else:    \n        sound = pygame.mixer.Sound(file_path)\n        volume = volume_sliders[volume_slider_index].get()\n        sound.set_volume(volume)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "print_volumes",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def print_volumes():\n    for i, volume_slider in enumerate(volume_sliders):\n        volume = volume_slider.get()\n        print(f\"Sound {i+1} volume: {volume:.2f}\")\n# function to show the settings window\ndef show_settings():\n    settings_window = customtkinter.CTkToplevel(root)\n    settings_window.title(\"Settings\")\n    # Create a frame for the choose file buttons\n    choose_file_frame = customtkinter.CTkFrame(settings_window)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "show_settings",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def show_settings():\n    settings_window = customtkinter.CTkToplevel(root)\n    settings_window.title(\"Settings\")\n    # Create a frame for the choose file buttons\n    choose_file_frame = customtkinter.CTkFrame(settings_window)\n    choose_file_frame.pack(padx=10, pady=10)\n    # create a choose file button for each sound file\n    for i, (sound_name, file_path) in enumerate(audio_files.items()):\n        choose_button = customtkinter.CTkButton(choose_file_frame, text=\"Choose File\", command=lambda index=sound_name: choose_file(index))\n        choose_button.pack(padx=10, pady=5)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "show_roboSpeak",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def show_roboSpeak():\n    robo_speak = customtkinter.CTkToplevel(root)\n    robo_speak.title(\"Talk to me\")\n    enterSpeak = customtkinter.CTkTextbox(robo_speak, width=300, height=300)\n    enterSpeak.pack(padx=10, pady=10)\n    # create a new function that gets the current text and speaks it\n    def speak_current_text():\n        text_to_speech(enterSpeak.get(\"1.0\", \"end-1c\"))\n        enterSpeak.delete(\"1.0\", \"end-1c\")\n    sendSpeak = customtkinter.CTkButton(robo_speak, text=\"Send\", command=speak_current_text)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "text_to_speech",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def text_to_speech(text):\n    # tts using gTTS\n    tts = gTTS(text=text, lang='en') # adjust lang parameter as needed\n    with tempfile.NamedTemporaryFile(delete=True) as fp:\n        temp_filename = fp.name + '.mp3'\n    tts.save(temp_filename)\n    mixer.music.load(temp_filename)\n    mixer.music.play()\n# Create a check box to toggle retrigger\nisRetrigger = customtkinter.BooleanVar()",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "start_move",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def start_move(event):\n    root.x = event.x_root - root.winfo_rootx()\n    root.y = event.y_root - root.winfo_rooty()\ndef move_window(event):\n    x = event.x_root - root.x\n    y = event.y_root - root.y\n    root.geometry(\"+%s+%s\" % (x, y))\n# bind the action listeners to the root\ndrag_frame.bind('<ButtonPress-1>', start_move)\ndrag_frame.bind('<B1-Motion>', move_window)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "move_window",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def move_window(event):\n    x = event.x_root - root.x\n    y = event.y_root - root.y\n    root.geometry(\"+%s+%s\" % (x, y))\n# bind the action listeners to the root\ndrag_frame.bind('<ButtonPress-1>', start_move)\ndrag_frame.bind('<B1-Motion>', move_window)\n# Empty bindings for the grid_frame and its children\ndef dummy(event):\n    pass",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "dummy",
+        "kind": 2,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "def dummy(event):\n    pass\ndrag_area = customtkinter.CTkFrame(root, width=500, height=200)  # adjust dimensions as needed\ndrag_area.pack(side='bottom', fill='x')  # pack the frame at the bottom of the root window\ndrag_area.bind('<ButtonPress-1>', start_move)\ndrag_area.bind('<B1-Motion>', move_window)\ngrid_frame.bind('<ButtonPress-1>', dummy)\ngrid_frame.bind('<B1-Motion>', dummy)\nrobotspeak = customtkinter.CTkButton(grid_frame, text=\"Robot Speak\", command=show_roboSpeak, width=80)\nrobotspeak.grid(row=len(audio_files) // num_cols + 4, column=num_cols - 1, sticky=\"SE\", padx=4, pady=4)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "num_cols",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "num_cols = 4\n# Get all files in the sounds directory\nsound_files = os.listdir(\"sounds\")\n# create a list to be used as options for users to choose a voice for\nvoices = [\"Brian\", \"Emma\", \"Amy\", \"Joanna\", \"Matthew\", \"Ivy\", \"Justin\", \"Kendra\", \"Kimberly\", \"Salli\", \"Joey\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\"]\n# Filter out non-wav files\nsound_files = [file for file in sound_files if os.path.splitext(file)[1] == \".wav\"]\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths\naudio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "sound_files",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "sound_files = os.listdir(\"sounds\")\n# create a list to be used as options for users to choose a voice for\nvoices = [\"Brian\", \"Emma\", \"Amy\", \"Joanna\", \"Matthew\", \"Ivy\", \"Justin\", \"Kendra\", \"Kimberly\", \"Salli\", \"Joey\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\"]\n# Filter out non-wav files\nsound_files = [file for file in sound_files if os.path.splitext(file)[1] == \".wav\"]\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths\naudio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = customtkinter.CTk()",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "voices",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "voices = [\"Brian\", \"Emma\", \"Amy\", \"Joanna\", \"Matthew\", \"Ivy\", \"Justin\", \"Kendra\", \"Kimberly\", \"Salli\", \"Joey\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\", \"Amy\", \"Brian\", \"Emma\", \"Raveena\", \"Ivy\", \"Joanna\", \"Joey\", \"Justin\", \"Kendra\", \"Kimberly\", \"Matthew\", \"Salli\", \"Nicole\", \"Russell\"]\n# Filter out non-wav files\nsound_files = [file for file in sound_files if os.path.splitext(file)[1] == \".wav\"]\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths\naudio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = customtkinter.CTk()\nroot.geometry(\"500x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "sound_files",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "sound_files = [file for file in sound_files if os.path.splitext(file)[1] == \".wav\"]\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths\naudio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = customtkinter.CTk()\nroot.geometry(\"500x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")\n# Create an empty frame that takes up the entire root window\ndrag_frame = customtkinter.CTkFrame(root, width=500, height=620)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "audio_files",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "audio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = customtkinter.CTk()\nroot.geometry(\"500x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")\n# Create an empty frame that takes up the entire root window\ndrag_frame = customtkinter.CTkFrame(root, width=500, height=620)\ndrag_frame.pack_propagate(False) # prevent the frame from shrinking\ndrag_frame.pack()\n# Create a frame for the grid",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "root = customtkinter.CTk()\nroot.geometry(\"500x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")\n# Create an empty frame that takes up the entire root window\ndrag_frame = customtkinter.CTkFrame(root, width=500, height=620)\ndrag_frame.pack_propagate(False) # prevent the frame from shrinking\ndrag_frame.pack()\n# Create a frame for the grid\ngrid_frame = customtkinter.CTkFrame(drag_frame)\ngrid_frame.place(relx=0.5, rely=0.5, anchor='c',) # place the frame at the center of drag_frame",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "drag_frame",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "drag_frame = customtkinter.CTkFrame(root, width=500, height=620)\ndrag_frame.pack_propagate(False) # prevent the frame from shrinking\ndrag_frame.pack()\n# Create a frame for the grid\ngrid_frame = customtkinter.CTkFrame(drag_frame)\ngrid_frame.place(relx=0.5, rely=0.5, anchor='c',) # place the frame at the center of drag_frame\n# Define the functions\n# function to choose a file\ndef choose_file(sound_index):\n    file_path = filedialog.askopenfilename(title=\"Select Audio File\", filetypes=((\"Audio Files\", \"*.wav *.mp3\"),))",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "grid_frame",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "grid_frame = customtkinter.CTkFrame(drag_frame)\ngrid_frame.place(relx=0.5, rely=0.5, anchor='c',) # place the frame at the center of drag_frame\n# Define the functions\n# function to choose a file\ndef choose_file(sound_index):\n    file_path = filedialog.askopenfilename(title=\"Select Audio File\", filetypes=((\"Audio Files\", \"*.wav *.mp3\"),))\n    if file_path:\n        audio_files[sound_index] = file_path\n        button[sound_index].configure(text=os.path.basename(file_path))\n# function to stop all sounds",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "isRetrigger",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "isRetrigger = customtkinter.BooleanVar()\nisRetrigger.set(True)\nretrigger_checkbox = customtkinter.CTkCheckBox(grid_frame, text=\"Retrigger\", variable=isRetrigger)\nretrigger_checkbox.grid(row=len(audio_files) // num_cols + 3, column=num_cols - 1, sticky=\"SE\", padx=10, pady=10)\n# Create the sound buttons and volume sliders\nvolume_sliders = []\nfor i, (sound_name, file_path) in enumerate(audio_files.items()):\n    # Create a frame for the sound\n    sound_frame = customtkinter.CTkFrame(master=grid_frame)\n    sound_frame.grid(row=i // num_cols, column=i % num_cols, padx=5, pady=5)",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "retrigger_checkbox",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "retrigger_checkbox = customtkinter.CTkCheckBox(grid_frame, text=\"Retrigger\", variable=isRetrigger)\nretrigger_checkbox.grid(row=len(audio_files) // num_cols + 3, column=num_cols - 1, sticky=\"SE\", padx=10, pady=10)\n# Create the sound buttons and volume sliders\nvolume_sliders = []\nfor i, (sound_name, file_path) in enumerate(audio_files.items()):\n    # Create a frame for the sound\n    sound_frame = customtkinter.CTkFrame(master=grid_frame)\n    sound_frame.grid(row=i // num_cols, column=i % num_cols, padx=5, pady=5)\n    # Create a button for the sound\n    button = customtkinter.CTkButton(sound_frame, width=100, text=sound_name, command=lambda file_path=file_path, volume_slider_index=i: play_sound(file_path, volume_slider_index))",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "volume_sliders",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "volume_sliders = []\nfor i, (sound_name, file_path) in enumerate(audio_files.items()):\n    # Create a frame for the sound\n    sound_frame = customtkinter.CTkFrame(master=grid_frame)\n    sound_frame.grid(row=i // num_cols, column=i % num_cols, padx=5, pady=5)\n    # Create a button for the sound\n    button = customtkinter.CTkButton(sound_frame, width=100, text=sound_name, command=lambda file_path=file_path, volume_slider_index=i: play_sound(file_path, volume_slider_index))\n    button.pack(padx=5, pady=5)\n    volume_slider = customtkinter.CTkSlider(sound_frame, from_=0.0, to=1.0, width=100, orientation=\"horizontal\")\n    volume_slider.pack(padx=5, pady=(0, 5))",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "settings_button",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "settings_button = customtkinter.CTkButton(grid_frame, text=\"Settings\", command=show_settings, width=80)\nsettings_button.grid(row=len(audio_files) // num_cols + 1, column=num_cols - 1, sticky=\"SE\", padx=4, pady=4)\n# Create a button to stop all sounds\nstop_button = customtkinter.CTkButton(grid_frame, text=\"STFU\", command=stop_sounds, width=80)\nstop_button.grid(row=len(audio_files) // num_cols + 2, column=num_cols - 1, sticky=\"SE\", padx=4, pady=4)\n# add an action listener to allow user to drag the window from the negative space on the frame\ndef start_move(event):\n    root.x = event.x_root - root.winfo_rootx()\n    root.y = event.y_root - root.winfo_rooty()\ndef move_window(event):",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "stop_button",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "stop_button = customtkinter.CTkButton(grid_frame, text=\"STFU\", command=stop_sounds, width=80)\nstop_button.grid(row=len(audio_files) // num_cols + 2, column=num_cols - 1, sticky=\"SE\", padx=4, pady=4)\n# add an action listener to allow user to drag the window from the negative space on the frame\ndef start_move(event):\n    root.x = event.x_root - root.winfo_rootx()\n    root.y = event.y_root - root.winfo_rooty()\ndef move_window(event):\n    x = event.x_root - root.x\n    y = event.y_root - root.y\n    root.geometry(\"+%s+%s\" % (x, y))",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "drag_area",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "drag_area = customtkinter.CTkFrame(root, width=500, height=200)  # adjust dimensions as needed\ndrag_area.pack(side='bottom', fill='x')  # pack the frame at the bottom of the root window\ndrag_area.bind('<ButtonPress-1>', start_move)\ndrag_area.bind('<B1-Motion>', move_window)\ngrid_frame.bind('<ButtonPress-1>', dummy)\ngrid_frame.bind('<B1-Motion>', dummy)\nrobotspeak = customtkinter.CTkButton(grid_frame, text=\"Robot Speak\", command=show_roboSpeak, width=80)\nrobotspeak.grid(row=len(audio_files) // num_cols + 4, column=num_cols - 1, sticky=\"SE\", padx=4, pady=4)\nroot.mainloop()",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "robotspeak",
+        "kind": 5,
+        "importPath": "SoundBoredv2.4",
+        "description": "SoundBoredv2.4",
+        "peekOfCode": "robotspeak = customtkinter.CTkButton(grid_frame, text=\"Robot Speak\", command=show_roboSpeak, width=80)\nrobotspeak.grid(row=len(audio_files) // num_cols + 4, column=num_cols - 1, sticky=\"SE\", padx=4, pady=4)\nroot.mainloop()",
+        "detail": "SoundBoredv2.4",
+        "documentation": {}
+    },
+    {
+        "label": "Robot",
+        "kind": 6,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "class Robot:\n    def __init__(self):\n        self.accent = \"Choose an accent\"\nclass BoredObj:\n    def __init__(self):\n        self.isDirty = False\nspeakerBot = Robot()\nmySoundBored = BoredObj()\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "BoredObj",
+        "kind": 6,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "class BoredObj:\n    def __init__(self):\n        self.isDirty = False\nspeakerBot = Robot()\nmySoundBored = BoredObj()\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths\naudio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = TkinterDnD.Tk()",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "choose_file",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def choose_file(sound_index):\n    file_path = filedialog.askopenfilename(title=\"Select Audio File\", filetypes=((\"Audio Files\", \"*.wav *.mp3\"),))\n    if file_path:\n        audio_files[sound_index] = file_path\n        button[sound_index].configure(text=os.path.basename(file_path))\n# function to stop all sounds\ndef stop_sounds():\n    pygame.mixer.music.stop()\n    pygame.mixer.stop()\n# show save button function",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "stop_sounds",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def stop_sounds():\n    pygame.mixer.music.stop()\n    pygame.mixer.stop()\n# show save button function\ndef show_save_button():\n    global save_button  # Declare the save_button as global to modify it\n    save_button = customtkinter.CTkButton(grid_frame, text=\"Save\", command=save_sounds)\n    save_button.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 3, sticky=\"E\", padx=4, pady=4)\ndef save_sounds():\n    with open('config.json', 'r') as f:",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "show_save_button",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def show_save_button():\n    global save_button  # Declare the save_button as global to modify it\n    save_button = customtkinter.CTkButton(grid_frame, text=\"Save\", command=save_sounds)\n    save_button.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 3, sticky=\"E\", padx=4, pady=4)\ndef save_sounds():\n    with open('config.json', 'r') as f:\n        sounds = json.load(f)\n    # Add new sounds to the list\n    for file_path in new_sound_files:\n        sound_name = os.path.basename(file_path)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "save_sounds",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def save_sounds():\n    with open('config.json', 'r') as f:\n        sounds = json.load(f)\n    # Add new sounds to the list\n    for file_path in new_sound_files:\n        sound_name = os.path.basename(file_path)\n        sounds.append(sound_name)\n    # Save updated list to config.json\n    with open('config.json', 'w') as f:\n        json.dump(sounds, f)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "play_sound",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def play_sound(file_path, volume_slider_index):\n    if isRetrigger.get() == True:\n        pygame.mixer.music.load(file_path)\n        volume = volume_sliders[volume_slider_index].get()\n        pygame.mixer.music.set_volume(volume)\n        pygame.mixer.music.play()\n    else:    \n        sound = pygame.mixer.Sound(file_path)\n        volume = volume_sliders[volume_slider_index].get()\n        sound.set_volume(volume)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "print_volumes",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def print_volumes():\n    for i, volume_slider in enumerate(volume_sliders):\n        volume = volume_slider.get()\n        print(f\"Sound {i+1} volume: {volume:.2f}\")\n# function to show the settings window\ndef show_settings():\n    settings_window = customtkinter.CTkToplevel(root)\n    settings_window.title(\"Settings\")\n    # Create a frame for the choose file buttons\n    choose_file_frame = customtkinter.CTkFrame(settings_window)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "show_settings",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def show_settings():\n    settings_window = customtkinter.CTkToplevel(root)\n    settings_window.title(\"Settings\")\n    # Create a frame for the choose file buttons\n    choose_file_frame = customtkinter.CTkFrame(settings_window)\n    choose_file_frame.pack(padx=10, pady=10)\n    # # create a choose file button for each sound file \n    # for i, (sound_name, file_path) in enumerate(audio_files.items()):\n    #     choose_button = customtkinter.CTkButton(choose_file_frame, text=\"Choose File\", command=lambda index=sound_name: choose_file(index))\n    #     choose_button.pack(padx=10, pady=5)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "hide_save_button",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def hide_save_button():\n    global save_button  # Declare the save_button as global to modify it\n    if save_button:\n        save_button.grid_forget()\n# function to show the roboSpeak window\ndef show_roboSpeak():\n    robo_speak = customtkinter.CTkToplevel(root)\n    robo_speak.title(\"Talk to me\")\n    robo_speak.lift()\n    robo_speak.attributes('-topmost', True) # This line keeps the robo_speak window always on top",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "show_roboSpeak",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def show_roboSpeak():\n    robo_speak = customtkinter.CTkToplevel(root)\n    robo_speak.title(\"Talk to me\")\n    robo_speak.lift()\n    robo_speak.attributes('-topmost', True) # This line keeps the robo_speak window always on top\n    # Create a frame that takes up the entire robo_speak window\n    robo_drag_frame = customtkinter.CTkFrame(robo_speak, width=300, height=120)\n    robo_drag_frame.pack_propagate(False) # prevent the frame from shrinking\n     # Add an action listener to allow the user to drag the window from the negative space on the frame\n    def start_move_robo(event):",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "text_to_speech",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def text_to_speech(text, accent):\n    if accent == \"Choose an accent\":\n        lang = \"en\"\n        tld = \"us\"\n    else:\n        lang, tld = accent\n    tts = gTTS(text=text, lang=lang, tld=tld)\n    with tempfile.NamedTemporaryFile(delete=True) as fp:\n        temp_filename = fp.name + '.mp3'\n    tts.save(temp_filename)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "start_move",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def start_move(event):\n    root.x = event.x_root - root.winfo_rootx()\n    root.y = event.y_root - root.winfo_rooty()\ndef move_window(event):\n    x = event.x_root - root.x\n    y = event.y_root - root.y\n    root.geometry(\"+%s+%s\" % (x, y))\n# bind the action listeners to the root\ndrag_frame.bind('<ButtonPress-1>', start_move)\ndrag_frame.bind('<B1-Motion>', move_window)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "move_window",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def move_window(event):\n    x = event.x_root - root.x\n    y = event.y_root - root.y\n    root.geometry(\"+%s+%s\" % (x, y))\n# bind the action listeners to the root\ndrag_frame.bind('<ButtonPress-1>', start_move)\ndrag_frame.bind('<B1-Motion>', move_window)\n# Empty bindings for the grid_frame and its children\ndef dummy(event):\n    pass",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "dummy",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def dummy(event):\n    pass\ndrag_area = customtkinter.CTkFrame(root, width=500, height=444)  # adjust dimensions as needed\ndrag_area.pack(side='bottom', fill='x')  # pack the frame at the bottom of the root window\ndrag_me_label = customtkinter.CTkLabel(drag_area, text=\"Drag me!\", width=10, height=10)\ndrag_me_label.place(relx=0.5, rely=0.5, anchor='s')\ndrag_area.bind('<ButtonPress-1>', start_move)\ndrag_area.bind('<B1-Motion>', move_window)\ngrid_frame.bind('<ButtonPress-1>', dummy)\ngrid_frame.bind('<B1-Motion>', dummy)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "drop",
+        "kind": 2,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "def drop(event):\n    print(\"attempting drop.\")\n    dropped_file_path = event.data\n    file_extension = os.path.splitext(dropped_file_path)[1]\n    if file_extension in [\".wav\", \".mp3}\"]:\n        if file_extension == \".mp3}\":\n            dropped_file_path = dropped_file_path[1:-1]\n        print(\"test1: \" + dropped_file_path)\n        print(\"test2: \" + file_extension)\n        new_sound_files.append(dropped_file_path)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "num_cols",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "num_cols = 4\nnew_sounds = []\nnew_sound_files = []\nsave_button = None  # Global variable to store the save button\ntry:\n    with open('config.json', 'r') as file:\n        json_string = file.read()\nexcept FileNotFoundError:\n    # open config.json from /default_settings\n    with open('default_settings/config.json', 'r') as file:",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "new_sounds",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "new_sounds = []\nnew_sound_files = []\nsave_button = None  # Global variable to store the save button\ntry:\n    with open('config.json', 'r') as file:\n        json_string = file.read()\nexcept FileNotFoundError:\n    # open config.json from /default_settings\n    with open('default_settings/config.json', 'r') as file:\n        json_string = file.read()",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "new_sound_files",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "new_sound_files = []\nsave_button = None  # Global variable to store the save button\ntry:\n    with open('config.json', 'r') as file:\n        json_string = file.read()\nexcept FileNotFoundError:\n    # open config.json from /default_settings\n    with open('default_settings/config.json', 'r') as file:\n        json_string = file.read()\n# convert the JSON string to a Python dictionary",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "save_button",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "save_button = None  # Global variable to store the save button\ntry:\n    with open('config.json', 'r') as file:\n        json_string = file.read()\nexcept FileNotFoundError:\n    # open config.json from /default_settings\n    with open('default_settings/config.json', 'r') as file:\n        json_string = file.read()\n# convert the JSON string to a Python dictionary\ntry:",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "choose_accent",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "choose_accent = {\n    \"Australian\": (\"en\", \"com.au\"),\n    \"British\": (\"en\", \"co.uk\"),\n    \"American\": (\"en\", \"us\"),\n    \"Canadian\": (\"en\", \"ca\"),\n    \"Indian\": (\"en\", \"co.in\"),\n    \"Irish\": (\"en\", \"ie\"),\n    \"South African\": (\"en\", \"co.za\")\n}\nui_accent = list(choose_accent.keys())",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "ui_accent",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "ui_accent = list(choose_accent.keys())\n# Define class Robot\nclass Robot:\n    def __init__(self):\n        self.accent = \"Choose an accent\"\nclass BoredObj:\n    def __init__(self):\n        self.isDirty = False\nspeakerBot = Robot()\nmySoundBored = BoredObj()",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "speakerBot",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "speakerBot = Robot()\nmySoundBored = BoredObj()\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths\naudio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = TkinterDnD.Tk()\nroot.geometry(\"380x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")\n# Define the functions",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "mySoundBored",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "mySoundBored = BoredObj()\n# Build a dictionary where the keys are the file names without the extension\n# and the values are the file paths\naudio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = TkinterDnD.Tk()\nroot.geometry(\"380x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")\n# Define the functions\n# function to choose a file",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "audio_files",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "audio_files = {os.path.splitext(file)[0]: f\"sounds/{file}\" for file in sound_files}\n# Create the GUI with buttons for each sound\nroot = TkinterDnD.Tk()\nroot.geometry(\"380x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")\n# Define the functions\n# function to choose a file\ndef choose_file(sound_index):\n    file_path = filedialog.askopenfilename(title=\"Select Audio File\", filetypes=((\"Audio Files\", \"*.wav *.mp3\"),))\n    if file_path:",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "root = TkinterDnD.Tk()\nroot.geometry(\"380x720\")\nroot.title(\"Dreaddy Bear's Sound Bored\")\n# Define the functions\n# function to choose a file\ndef choose_file(sound_index):\n    file_path = filedialog.askopenfilename(title=\"Select Audio File\", filetypes=((\"Audio Files\", \"*.wav *.mp3\"),))\n    if file_path:\n        audio_files[sound_index] = file_path\n        button[sound_index].configure(text=os.path.basename(file_path))",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "drag_frame",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "drag_frame = customtkinter.CTkFrame(root, width=360, height=820)\n# Create a frame for the grid\ngrid_frame = customtkinter.CTkFrame(drag_frame)\ngrid_frame.pack(fill=\"both\", expand=True)  # fill the parent frame and allow expanding\ndrag_frame.pack()\n# Create the sound buttons and volume sliders\nvolume_sliders = []\nfor i, (sound_name, file_path) in enumerate(audio_files.items()):\n    # Create a frame for the sound\n    sound_frame = customtkinter.CTkFrame(master=grid_frame)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "grid_frame",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "grid_frame = customtkinter.CTkFrame(drag_frame)\ngrid_frame.pack(fill=\"both\", expand=True)  # fill the parent frame and allow expanding\ndrag_frame.pack()\n# Create the sound buttons and volume sliders\nvolume_sliders = []\nfor i, (sound_name, file_path) in enumerate(audio_files.items()):\n    # Create a frame for the sound\n    sound_frame = customtkinter.CTkFrame(master=grid_frame)\n    sound_frame.grid(row=i // num_cols, column=i % num_cols, padx=5, pady=5)\n    # Configure the row and column to be stretchable",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "volume_sliders",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "volume_sliders = []\nfor i, (sound_name, file_path) in enumerate(audio_files.items()):\n    # Create a frame for the sound\n    sound_frame = customtkinter.CTkFrame(master=grid_frame)\n    sound_frame.grid(row=i // num_cols, column=i % num_cols, padx=5, pady=5)\n    # Configure the row and column to be stretchable\n    grid_frame.grid_rowconfigure(i // num_cols, weight=1)\n    grid_frame.grid_columnconfigure(i % num_cols, weight=1)\n    # Create a button for the sound\n    button = customtkinter.CTkButton(sound_frame, width=100, text=sound_name, command=lambda file_path=file_path, volume_slider_index=i: play_sound(file_path, volume_slider_index))",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "settings_button",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "settings_button = customtkinter.CTkButton(grid_frame, text=\"Settings\", command=show_settings, width=80)\nsettings_button.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 1, sticky=\"E\", padx=4, pady=4)\n# Create a button to stop all sounds\nstop_button = customtkinter.CTkButton(grid_frame, text=\"STFU\", command=stop_sounds, width=80)\nstop_button.grid(row=(len(audio_files) // num_cols) + 1, column=num_cols - 1, sticky=\"E\", padx=4, pady=4)\n# Create a check box to toggle retrigger\nisRetrigger = customtkinter.BooleanVar()\nisRetrigger.set(True)\nretrigger_checkbox = customtkinter.CTkCheckBox(grid_frame, text=\"Retrigger\", variable=isRetrigger)\nretrigger_checkbox.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 2, sticky=\"E\", padx=4, pady=4)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "stop_button",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "stop_button = customtkinter.CTkButton(grid_frame, text=\"STFU\", command=stop_sounds, width=80)\nstop_button.grid(row=(len(audio_files) // num_cols) + 1, column=num_cols - 1, sticky=\"E\", padx=4, pady=4)\n# Create a check box to toggle retrigger\nisRetrigger = customtkinter.BooleanVar()\nisRetrigger.set(True)\nretrigger_checkbox = customtkinter.CTkCheckBox(grid_frame, text=\"Retrigger\", variable=isRetrigger)\nretrigger_checkbox.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 2, sticky=\"E\", padx=4, pady=4)\n# Create a button to show the roboSpeak window\nrobotspeak = customtkinter.CTkButton(grid_frame, text=\"Robot Speak\", command=show_roboSpeak, width=80)\nrobotspeak.grid(row=(len(audio_files) // num_cols) , column=num_cols - 1, sticky=\"E\", padx=4, pady=4)",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "isRetrigger",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "isRetrigger = customtkinter.BooleanVar()\nisRetrigger.set(True)\nretrigger_checkbox = customtkinter.CTkCheckBox(grid_frame, text=\"Retrigger\", variable=isRetrigger)\nretrigger_checkbox.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 2, sticky=\"E\", padx=4, pady=4)\n# Create a button to show the roboSpeak window\nrobotspeak = customtkinter.CTkButton(grid_frame, text=\"Robot Speak\", command=show_roboSpeak, width=80)\nrobotspeak.grid(row=(len(audio_files) // num_cols) , column=num_cols - 1, sticky=\"E\", padx=4, pady=4)\n# add an action listener to allow user to drag the window from the negative space on the frame\ndef start_move(event):\n    root.x = event.x_root - root.winfo_rootx()",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "retrigger_checkbox",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "retrigger_checkbox = customtkinter.CTkCheckBox(grid_frame, text=\"Retrigger\", variable=isRetrigger)\nretrigger_checkbox.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 2, sticky=\"E\", padx=4, pady=4)\n# Create a button to show the roboSpeak window\nrobotspeak = customtkinter.CTkButton(grid_frame, text=\"Robot Speak\", command=show_roboSpeak, width=80)\nrobotspeak.grid(row=(len(audio_files) // num_cols) , column=num_cols - 1, sticky=\"E\", padx=4, pady=4)\n# add an action listener to allow user to drag the window from the negative space on the frame\ndef start_move(event):\n    root.x = event.x_root - root.winfo_rootx()\n    root.y = event.y_root - root.winfo_rooty()\ndef move_window(event):",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "robotspeak",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "robotspeak = customtkinter.CTkButton(grid_frame, text=\"Robot Speak\", command=show_roboSpeak, width=80)\nrobotspeak.grid(row=(len(audio_files) // num_cols) , column=num_cols - 1, sticky=\"E\", padx=4, pady=4)\n# add an action listener to allow user to drag the window from the negative space on the frame\ndef start_move(event):\n    root.x = event.x_root - root.winfo_rootx()\n    root.y = event.y_root - root.winfo_rooty()\ndef move_window(event):\n    x = event.x_root - root.x\n    y = event.y_root - root.y\n    root.geometry(\"+%s+%s\" % (x, y))",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "drag_area",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "drag_area = customtkinter.CTkFrame(root, width=500, height=444)  # adjust dimensions as needed\ndrag_area.pack(side='bottom', fill='x')  # pack the frame at the bottom of the root window\ndrag_me_label = customtkinter.CTkLabel(drag_area, text=\"Drag me!\", width=10, height=10)\ndrag_me_label.place(relx=0.5, rely=0.5, anchor='s')\ndrag_area.bind('<ButtonPress-1>', start_move)\ndrag_area.bind('<B1-Motion>', move_window)\ngrid_frame.bind('<ButtonPress-1>', dummy)\ngrid_frame.bind('<B1-Motion>', dummy)\n# handle file drop\ndef drop(event):",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "drag_me_label",
+        "kind": 5,
+        "importPath": "SoundBoredv4",
+        "description": "SoundBoredv4",
+        "peekOfCode": "drag_me_label = customtkinter.CTkLabel(drag_area, text=\"Drag me!\", width=10, height=10)\ndrag_me_label.place(relx=0.5, rely=0.5, anchor='s')\ndrag_area.bind('<ButtonPress-1>', start_move)\ndrag_area.bind('<B1-Motion>', move_window)\ngrid_frame.bind('<ButtonPress-1>', dummy)\ngrid_frame.bind('<B1-Motion>', dummy)\n# handle file drop\ndef drop(event):\n    print(\"attempting drop.\")\n    dropped_file_path = event.data",
+        "detail": "SoundBoredv4",
+        "documentation": {}
+    },
+    {
+        "label": "execute_command",
+        "kind": 2,
+        "importPath": "tts",
+        "description": "tts",
+        "peekOfCode": "def execute_command(inputcommand):\n    process = subprocess.Popen(inputcommand, stdout=subprocess.PIPE, shell=True)\n    output, err = process.communicate()\n    return output\ndef text_to_speech(text):\n    # tts using espeak\n    command = f'espeak -ven+f3 -k5 -s150 \"{text}\"'\n    execute_command(command)\n# example usage\ntext_to_speech(\"Hello, this is a test.\")",
+        "detail": "tts",
+        "documentation": {}
+    },
+    {
+        "label": "text_to_speech",
+        "kind": 2,
+        "importPath": "tts",
+        "description": "tts",
+        "peekOfCode": "def text_to_speech(text):\n    # tts using espeak\n    command = f'espeak -ven+f3 -k5 -s150 \"{text}\"'\n    execute_command(command)\n# example usage\ntext_to_speech(\"Hello, this is a test.\")",
+        "detail": "tts",
+        "documentation": {}
+    }
+]

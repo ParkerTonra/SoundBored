@@ -283,7 +283,7 @@ settings_button = customtkinter.CTkButton(grid_frame, text="Settings", command=s
 settings_button.grid(row=(len(audio_files) // num_cols) + 2, column=num_cols - 1, sticky="E", padx=4, pady=4)
 
 # Create a button to stop all sounds
-stop_button = customtkinter.CTkButton(grid_frame, text="STFU", command=stop_sounds, width=80)
+stop_button = customtkinter.CTkButton(grid_frame, text="Stop Sound", command=stop_sounds, width=80)
 stop_button.grid(row=(len(audio_files) // num_cols) + 1, column=num_cols - 1, sticky="E", padx=4, pady=4)
 
 # Create a check box to toggle retrigger
